@@ -1,7 +1,7 @@
 {
   "name": "urequire-rc-rxjs5-custom-build",
   "description": "Build *custom build of RxJS 5*, a custom Observable with added (patched) operators on streams (eg 'map', 'filter' etc), and static methods attached to Observable (like 'Observable.fromEvent')",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "http://uRequire.org",
   "author": {
     "name": "Agelos Pikoulas",
@@ -36,6 +36,9 @@
   "engines": {
     "node": ">=0.10 <=5"
   },
+  "dependencies": {
+    "lodash": "3.x"
+  },
   "devDependencies": {
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-preset-es2015": "6.6.0",
@@ -45,7 +48,6 @@
     "grunt": "0.4.5",
     "grunt-contrib-watch": "0.5.x",
     "grunt-urequire": "^0.7.3",
-    "lodash": "3.x",
     "urequire": "^0.7.0-beta.27",
     "urequire-rc-babeljs": "^0.1.0",
     "urequire-rc-inject-version": "^0.1.6"
