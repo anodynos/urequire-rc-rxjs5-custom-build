@@ -33,7 +33,8 @@ export default [                    // This ResourceConverter is using an [] ins
       .value()
       .join('\n') }
 
-      export { Observable, VERSION };
+      export default exports; // exports stands as the Rx object, which should be the default exports object for ES6 
+      export { Observable, VERSION};
     `
   },
 
