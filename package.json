@@ -1,7 +1,7 @@
 {
   "name": "urequire-rc-rxjs5-custom-build",
   "description": "Build *custom build of RxJS 5*, a custom Observable with added (patched) operators on streams (eg 'map', 'filter' etc), and static methods attached to Observable (like 'Observable.fromEvent')",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "homepage": "http://uRequire.org",
   "author": {
     "name": "Agelos Pikoulas",

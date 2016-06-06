@@ -11,11 +11,13 @@ export default [                    // This ResourceConverter is using an [] ins
   as you would expect (i.e Rx.Observable.fromEvent() or clicks.filter()) 
   `,
 
-  ['rxjs5-custom-build.js'],        // an [] of `filez` as in http://urequire.org/masterdefaultsconfig.coffee#bundle.filez, at pos 2
+  ['rxjs5-custom-build.js'],               // an [] of `filez` as in http://urequire.org/masterdefaultsconfig.coffee#bundle.filez, at pos 2
 
   function () {                            // `convert` Function (the actual beef) at pos 3
     return ` 
-      import { Observable } from 'rxjs/Observable';
+      ${this.options.importObservable || ?  
+          "import { Observable } from 'rxjs/Observable';" :
+          "let Observable = { Observable: {} };" }
 
       // operators on Observables sequences (i.e instances of Observable) to be added
       // i.e "patch Observable with appropriate methods" as described in rxjs docs
@@ -39,6 +41,7 @@ export default [                    // This ResourceConverter is using an [] ins
   },
 
   { // default options object
+    importObservable: true,
     addOperators: [ 'map', 'filter' ],
     staticImports: [ 'from' ]
     //es6: true // @todo: not implemented (it acts as always true) - ie NO ES5 code generation, only ES6

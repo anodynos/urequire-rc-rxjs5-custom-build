@@ -35,11 +35,13 @@ uRequire ResourceConverter for RxJS 5 builds your custom RxJS 5, aiming to behav
 
 # How to use
 
-You declare 
+You declare the options: 
 
  * which `addOperators` (eg `['map', 'filter',..]`) you want to patch and 
     
- * which static ones (eg `fromEvent`) 
+ * which static ones you want to import (eg `fromEvent`)
+  
+ * Whether you want the whole `Observable` imported, or just mocked by an `{}` as a placeholder for static methods (`true` by default).   
  
 in the `urequire` config , eg : 
 
@@ -50,6 +52,7 @@ in the `urequire` config , eg :
      dstPath: 'build'
      resources: [
        [ 'rxjs5-custom-build', {
+            importObservable: false
             addOperators: [ 'map', 'filter' ]
             staticImports: [ 'fromEvent' ]
           }
