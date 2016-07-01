@@ -54,7 +54,7 @@
   },
   "config": {
     "ghooks": {
-      "pre-push": "grunt lib",
+      "pre-push": "grunt",
       "post-merge": "npm i"
     }
   }
