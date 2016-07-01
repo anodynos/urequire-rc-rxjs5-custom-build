@@ -37,12 +37,10 @@ uRequire ResourceConverter for RxJS 5 builds your custom RxJS 5, aiming to behav
 
 You declare the options: 
 
- * which `addOperators` (eg `['map', 'filter',..]`) you want to patch and 
-    
- * which static ones you want to import (eg `fromEvent`)
-  
- * Whether you want the whole `Observable` imported, or just mocked by an `{}` as a placeholder for static methods (`true` by default).   
- 
+ * `addOperators`: which operators you want to be added (patched) to instances (eg `['map', 'filter',..]`).  
+
+ * `staticImports`: which static methods you want to import and attach to Observable (eg `['fromEvent', ...]`).
+
 in the `urequire` config , eg : 
 
 ``` 
@@ -51,8 +49,7 @@ in the `urequire` config , eg :
      path: 'src'
      dstPath: 'build'
      resources: [
-       [ 'rxjs5-custom-build', {
-            importObservable: false
+       [ 'rxjs5-custom-build', {  // the options Object
             addOperators: [ 'map', 'filter' ]
             staticImports: [ 'fromEvent' ]
           }
@@ -88,7 +85,7 @@ The generated file by default is in ES6, but you can easily convert to ES5 using
 
 The MIT License
 
-Copyright (c) 2014-2016 Agelos Pikoulas (agelos.pikoulas@gmail.com)
+Copyright (c) 2014-2016 Angelos Pikoulas (agelos.pikoulas@gmail.com)
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
